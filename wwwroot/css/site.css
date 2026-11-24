@@ -1,0 +1,343 @@
+/* ==========================================================================
+   InstructorInformationsSystem - Professional SaaS Modern Design System
+   Font Family: Inter & Plus Jakarta Sans
+   Palette: Slate Blue (#0F172A), Indigo Accent (#4F46E5), Neutral Gray (#F8FAFC)
+   ========================================================================== */
+
+/* 1. Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+
+/* 2. CSS Variables / Design Tokens */
+:root {
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    --primary-light: #eef2ff;
+    --dark-slate: #0f172a;
+    --text-main: #334155;
+    --text-muted: #64748b;
+    --bg-main: #f8fafc;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+    --border-focus: #818cf8;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+    --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+}
+
+/* 3. Base & Reset (FIXED: changed '-' to '*') */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 4. Headings */
+h1, h2, h3, h4, h5, h6,
+.form-title,
+.system-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    color: var(--dark-slate);
+    letter-spacing: -0.02em;
+    margin-top: 0;
+}
+
+    h2.form-title {
+        font-size: 26px;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+/* 5. Navigation Bar */
+.navbar-header {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 16px 0;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.system-title a {
+    text-decoration: none;
+    color: var(--dark-slate);
+    font-size: 22px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+    .system-title a::before {
+        content: "🎓";
+        font-size: 24px;
+    }
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+    .nav-links a {
+        text-decoration: none;
+        color: var(--text-muted);
+        font-weight: 600;
+        font-size: 15px;
+        transition: color 0.2s ease;
+    }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a.nav-btn {
+            background-color: var(--dark-slate);
+            color: #ffffff !important;
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            transition: background-color 0.2s ease;
+        }
+
+            .nav-links a.nav-btn:hover {
+                background-color: var(--primary);
+            }
+
+/* 6. Layout Containers & Footer */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
+}
+
+.main-content {
+    flex: 1;
+    padding: 40px 24px;
+}
+
+.footer {
+    background-color: #ffffff;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* 7. Modern Form Cards */
+.auth-card {
+    max-width: 520px;
+    margin: 30px auto;
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--dark-slate);
+    }
+
+.form-control {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--dark-slate);
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+    .form-control:focus {
+        border-color: var(--primary);
+        outline: none;
+        box-shadow: 0 0 0 4px var(--primary-light);
+    }
+
+    .form-control::placeholder {
+        color: #94a3b8;
+    }
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+    .checkbox-group input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        accent-color: var(--primary);
+        cursor: pointer;
+    }
+
+/* 8. Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #ffffff !important;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2);
+}
+
+    .btn-primary:hover {
+        background-color: var(--primary-hover);
+        transform: translateY(-1px);
+    }
+
+.btn-secondary {
+    background-color: #ffffff;
+    color: var(--dark-slate);
+    border-color: var(--border-color);
+}
+
+    .btn-secondary:hover {
+        background-color: var(--bg-main);
+    }
+
+/* 9. Red Error Alerts & Validation */
+.alert {
+    padding: 14px 18px !important;
+    border-radius: var(--radius-sm) !important;
+    margin-bottom: 20px !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+    /* ADDED: Hides the empty red alert box until JS puts an error message inside */
+    .alert:empty {
+        display: none !important;
+    }
+
+.alert-danger,
+#jsValidationError,
+#jsLoginValidationError,
+#alertMessage {
+    background-color: #fef2f2 !important;
+    color: #991b1b !important;
+    border: 1px solid #fecaca !important;
+    font-weight: 600 !important;
+}
+
+.text-danger,
+span.text-danger,
+.field-validation-error {
+    color: #dc2626 !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    margin-top: 6px !important;
+    display: block !important;
+}
+
+.input-validation-error {
+    border-color: #f87171 !important;
+    background-color: #fef2f2 !important;
+}
+
+.alert-success {
+    background-color: #f0fdf4 !important;
+    color: #166534 !important;
+    border: 1px solid #bbf7d0 !important;
+    font-weight: 600 !important;
+}
+
+/* 10. Dashboard & Instructor Data Table */
+.instructor-container,
+.dashboard-container {
+    background: var(--card-bg);
+    padding: 36px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+}
+
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+    .table th {
+        background-color: var(--bg-main);
+        color: var(--text-muted);
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 0.05em;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .table td {
+        padding: 16px;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-main);
+    }
+
+    .table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .table tr:hover td {
+        background-color: #fafafa;
+    }
+
+    /* Table Action Buttons (FIXED: switched from asp-action to href*=) */
+    .table td a {

@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="dashboard-container">
+    <h2>Welcome to Admin Dashboard</h2>
+    <p>Manage faculty members and administrative details seamlessly.</p>
+
+    <div class="dashboard-actions">
+        <a asp-controller="Instructor" asp-action="Create" class="btn btn-primary">+ Add New Instructor</a>
+        <a asp-controller="Instructor" asp-action="Index" class="btn btn-secondary">View Instructor List</a>
+    </div>
+</div>
